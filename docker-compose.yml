@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  cms:
+    build: payload
+    ports:
+      - 3000:3000
+    env_file:
+      - payload/.env
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=payload
+      - MONGO_INITDB_ROOT_PASSWORD=payload
