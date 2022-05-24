@@ -14,12 +14,12 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY package.json  .
+COPY yarn.lock  .
 
-RUN npm install
+RUN yarn install
 
 COPY . .
-
-RUN npm run build
+RUN yarn build
 
 EXPOSE 3000
-CMD [ "npm", "run", "dev" ]
+CMD [ "yarn", "serve" ]

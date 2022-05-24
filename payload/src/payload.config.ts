@@ -1,10 +1,10 @@
-import { buildConfig } from "payload/config";
-import path from "path";
+import { buildConfig } from 'payload/config';
+import path from 'path';
 // import Examples from './collections/Examples';
-import Users from "./collections/Users";
+import Users from './collections/Users';
 
 export default buildConfig({
-  serverURL: "http://localhost:3000",
+  serverURL: 'http://localhost:3000',
   admin: {
     user: Users.slug,
   },
@@ -14,6 +14,6 @@ export default buildConfig({
     // Examples,
   ],
   typescript: {
-    outputFile: path.resolve(__dirname, "payload-types.ts"),
+    outputFile: path.resolve(__dirname, 'payload-types.ts')
   },
 });

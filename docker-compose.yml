@@ -1,16 +1,20 @@
 version: "3.9"
 
 services:
-  cms:
+  payload:
     build: payload
     ports:
       - 3000:3000
-    env_file:
-      - payload/.env
+    environment:
+      - MONGODB_URI=mongodb://db/payload
+      - PAYLOAD_SECRET=OAIJd9ajsdoimaSOIDJASDj
   db:
     image: mongo:latest
     ports:
       - 27017:27017
+    volumes:
+      - ~/apps/mongo:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=payload
-      - MONGO_INITDB_ROOT_PASSWORD=payload
+      - MONGO_INITDB_ROOT_PASSWORD=payload123
+      - MONGO_INITDB_DATABASE=payload
