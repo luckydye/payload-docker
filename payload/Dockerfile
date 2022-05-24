@@ -1,7 +1,5 @@
 FROM node:16-alpine
 
-ARG PAYLOAD_PUBLIC_BASE_DNS
-
 RUN apk add --update alpine-sdk build-base
 
 # Install python/pip

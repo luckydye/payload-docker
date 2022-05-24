@@ -14,8 +14,8 @@ payload.init({
   secret: process.env.PAYLOAD_SECRET,
   mongoURL: process.env.MONGODB_URI,
   mongoOptions: {
-    user: "payload",
-    pass: "payload123",
+    user: process.env.MONGODB_USER,
+    pass: process.env.MONGODB_PASSWORD,
   },
   express: app,
   onInit: () => {
