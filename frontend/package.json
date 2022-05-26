@@ -5,7 +5,7 @@
   "scripts": {
     "generate": "echo Generate static site",
     "dev": "echo Dev watch/build/serve",
-    "start": "deno run --allow-net server/server.ts",
+    "start": "deno run --allow-read --allow-net server/server.ts",
     "build": "echo Build frontend"
   },
   "author": "",

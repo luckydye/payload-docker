@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= it.site.title %></title>
+
+    <meta name="description" content="<%= it.site.description %>" />
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <img src="<%= it.site.logo.url %>" alt="<%= it.site.logo.alt %>" />
+    </header>
+
+    <main>
+      <% if(it.post) { %>
+        <%~ includeFile('./post.html', { post: it.post }) %>
+      <% } else { %>
+        <%~ includeFile('./page.html', { layout: it.site.composition.layout }) %>
+      <% } %>
+    </main>
+
+    <footer><%= it.site.copyright %></footer>
+  </body>
+</html>
