@@ -1,0 +1,218 @@
+h2 {
+  opacity: 1;
+  position: relative;
+}
+
+.split-rect {
+  display: grid;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.split-rect h2 {
+  margin: 0;
+  padding: 30px 40px;
+  z-index: 100;
+  text-shadow: 1px 2px 12px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.split-rect .background-image,
+.split-rect .rect-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.split-rect .background-image {
+  z-index: 0;
+  transition: transform 0.25s ease-out, filter 0.25s ease;
+  filter: saturate(0);
+}
+
+.split-rect .background-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.split-rect .rect-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.split-rect .left-rect,
+.split-rect .right-rect {
+  height: 450px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  transform: scale(1);
+}
+
+.split-rect .left-rect {
+  margin-left: -10px;
+}
+
+.split-rect .right-rect {
+  margin-right: -10px;
+}
+
+.split-rect .left-rect:hover .background-image,
+.split-rect .right-rect:hover .background-image {
+  transform: scale(1.01);
+  filter: saturate(1);
+}
+
+.split-rect .left-rect:hover,
+.split-rect .right-rect:hover {
+  transform: scale(1.005);
+}
+
+.split-rect .left-rect:active,
+.split-rect .right-rect:active {
+  transform: scale(1);
+  transition: none;
+}
+
+.split-rect .inner-split-rect {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border-radius: 6px;
+}
+
+.split-rect .inner-split-rect:hover {
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.split-rect .left-rect .inner-split-rect {
+  transform: translate(30px, 15px);
+  text-align: left;
+}
+
+.split-rect .right-rect .inner-split-rect {
+  transform: translate(-30px, -15px);
+  text-align: right;
+}
+
+.project-grid {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+section.latest-posts::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  height: 15px;
+  width: 300px;
+  background: inherit;
+  z-index: -1;
+}
+
+section.latest-posts {
+  border-top: 1px solid var(--section-bg);
+  border-bottom: 1px solid var(--section-bg);
+  margin-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+gallary-item:nth-child(1) {
+  --delay: 0s;
+}
+gallary-item:nth-child(2) {
+  --delay: 0.125s;
+}
+gallary-item:nth-child(3) {
+  --delay: 0.25s;
+}
+gallary-item:nth-child(4) {
+  --delay: 0.33s;
+}
+gallary-item:nth-child(5) {
+  --delay: 0.5s;
+}
+
+/* big-paragraph */
+
+.big-paragraph {
+  max-width: 700px;
+  text-align: justify;
+}
+
+.big-paragraph .title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  text-transform: none;
+  margin: 0 0 20px 0;
+}
+
+.big-paragraph .bio {
+  line-height: 150%;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  white-space: break-spaces;
+}
+
+.about {
+  position: relative;
+  z-index: 1000;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 80px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.profile-image {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 100px;
+}
+
+.profile-image img {
+  width: 100%;
+  filter: brightness(1.1) contrast(0.87) saturate(1.1);
+}
+
+main[loading] {
+  opacity: 0;
+  transform: scale(0.995);
+}
+
+@keyframes slide-in-nav {
+  from {
+    opacity: 0;
+    transform: translate(-100px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}

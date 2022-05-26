@@ -10,20 +10,140 @@
     <meta name="description" content="<%= it.site.description %>" />
 
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <header>
-      <img src="<%= it.site.logo.url %>" alt="<%= it.site.logo.alt %>" />
+      <div class="header-wrapper">
+        <a href="/">
+          <div class="logo">
+            <img
+              src="<%= it.site.logo.url %>"
+              alt="<%= it.site.logo.alt %>"
+              height="25"
+              width="114"
+            />
+          </div>
+        </a>
+        <div class="header-right">
+          <div class="navigation">
+            <!-- <a href="./cinematography.html" class="nav-item">Video- and Photography</a> -->
+          </div>
+          <div class="links">
+            <a
+              class="link-btn"
+              target="blank"
+              href="https://github.com/luckydye"
+              title="Github"
+            >
+              <img
+                alt="Github Logo"
+                src="images/GitHub-Mark-Light-32px.png"
+                width="20px"
+                height="20px"
+              />
+            </a>
+            <a
+              class="link-btn"
+              target="blank"
+              href="https://twitter.com/timh4v"
+              title="Twitter"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="31.952"
+                height="25.963"
+                viewBox="0 0 31.952 25.963"
+              >
+                <path
+                  id="test1"
+                  d="M85.049,124.411a18.524,18.524,0,0,0,18.65-18.65c0-.284,0-.567-.019-.848a13.336,13.336,0,0,0,3.27-3.392,13.082,13.082,0,0,1-3.765,1.031,6.578,6.578,0,0,0,2.882-3.625,13.137,13.137,0,0,1-4.162,1.589,6.56,6.56,0,0,0-11.171,5.978,18.609,18.609,0,0,1-13.509-6.848,6.56,6.56,0,0,0,2.029,8.75,6.506,6.506,0,0,1-2.976-.821v.083a6.557,6.557,0,0,0,5.257,6.421,6.545,6.545,0,0,1-2.96.113,6.562,6.562,0,0,0,6.124,4.552,13.152,13.152,0,0,1-8.141,2.811,13.343,13.343,0,0,1-1.561-.1A18.558,18.558,0,0,0,85.046,124.4"
+                  transform="translate(-74.998 -98.449)"
+                  fill="#eee"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <% if(it.post) { %>
-        <%~ includeFile('./post.html', { post: it.post }) %>
-      <% } else { %>
-        <%~ includeFile('./page.html', { layout: it.site.composition.layout }) %>
-      <% } %>
+    <main loading>
+      <twitch-notification></twitch-notification>
+
+      <% if(it.post) { %> <%~ includeFile('./post.html', { post: it.post }) %>
+      <% } else { %> <%~ includeFile('./page.html', { layout:
+      it.site.composition.layout }) %> <% } %>
+
+      <section class="feature">
+        <div class="content-wrapper">
+          <list-gallary></list-gallary>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-wrapper">
+          <div class="split-rect">
+            <a class="left-rect" href="/ui-design">
+              <div class="inner-split-rect">
+                <h2 titleoffset="400">UI Concepts</h2>
+                <div class="rect-overlay"></div>
+                <div class="background-image">
+                  <img
+                    width="100%"
+                    src="https://media.graphcms.com/isOl1orkQN6uhdC8i5nT"
+                  />
+                </div>
+              </div>
+            </a>
+            <a class="right-rect" href="/3d-illustration">
+              <div class="inner-split-rect">
+                <h2 titleoffset="400">3D Illustration</h2>
+                <div class="rect-overlay"></div>
+                <div class="background-image">
+                  <img
+                    width="100%"
+                    src="https://media.graphcms.com/pD5x3k4lRHaOw3i2fHll"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-wrapper project-grid">
+          <div>
+            <h2>Projects & Tools</h2>
+            <br />
+          </div>
+          <project-list></project-list>
+        </div>
+      </section>
+
+      <section class="latest-posts">
+        <div class="content-wrapper project-grid">
+          <div>
+            <h2>Latest Posts</h2>
+            <br />
+          </div>
+          <post-list></post-list>
+        </div>
+      </section>
     </main>
 
-    <footer><%= it.site.copyright %></footer>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer_logo">
+          <img src="./images/min_logo.svg" />
+        </div>
+        <div class="copyright"><%= it.site.copyright %></div>
+        <div class="links"></div>
+        <div class="meta-links">
+          <a href="mailto:tim.h4vlicek@gmail.com">Contact me</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
