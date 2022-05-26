@@ -1,17 +1,26 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from "payload/types";
+import { isAdmin } from "./../utils";
 
 const Users: CollectionConfig = {
-  slug: 'users',
+  slug: "users",
   auth: true,
   admin: {
-    useAsTitle: 'email',
+    useAsTitle: "email",
   },
   access: {
-    read: () => true,
+    create: isAdmin,
+    read: isAdmin,
+    delete: isAdmin,
+    update: isAdmin,
   },
   fields: [
     // Email added by default
     // Add more fields as needed
+    {
+      name: "Role",
+      type: "relationship",
+      relationTo: "roles",
+    },
   ],
 };
 

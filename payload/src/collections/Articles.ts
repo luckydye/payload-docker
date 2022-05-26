@@ -1,12 +1,9 @@
 import { CollectionConfig } from "payload/types";
 
-const Projects: CollectionConfig = {
-  slug: "projects",
+const Articles: CollectionConfig = {
+  slug: "articles",
   admin: {
     useAsTitle: "title",
-  },
-  access: {
-    read: () => true,
   },
   versions: {
     drafts: true,
@@ -19,27 +16,25 @@ const Projects: CollectionConfig = {
       required: true,
     },
     {
-      name: "link",
-      type: "text",
+      name: "author",
+      type: "relationship",
+      relationTo: "users",
     },
     {
-      name: "thumbnail",
-      type: "upload",
-      relationTo: "media",
-    },
-    {
-      name: "teaser",
-      type: "text",
+      name: "date",
+      type: "date",
     },
     {
       name: "copy",
       type: "richText",
     },
     {
-      name: "date",
-      type: "date",
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
+      hasMany: true,
     },
   ],
 };
 
-export default Projects;
+export default Articles;
