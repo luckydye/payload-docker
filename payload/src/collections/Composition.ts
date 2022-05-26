@@ -1,16 +1,17 @@
-import { Block, CollectionConfig } from "payload/types";
+import { RichText } from "./../blocks/RichText";
+import { MediaList } from "./../blocks/MediaList";
+import { TeaserList } from "../blocks/TeasersList";
+import { PostList } from "../blocks/PostList";
+import { CompositionList } from "./../blocks/CompositionList";
+import { CollectionConfig } from "payload/types";
 
-const ProjectList: Block = {
-  slug: "projectList",
-  fields: [
-    {
-      name: "project",
-      type: "relationship",
-      relationTo: "projects",
-      hasMany: true,
-    },
-  ],
-};
+const layoutBlocks = [
+  RichText,
+  PostList,
+  MediaList,
+  TeaserList,
+  CompositionList,
+];
 
 const Compositions: CollectionConfig = {
   slug: "compositions",
@@ -31,14 +32,20 @@ const Compositions: CollectionConfig = {
       required: true,
     },
     {
+      name: "title",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "description",
+      type: "text",
+      required: true,
+    },
+    {
       name: "layout",
       type: "blocks",
       minRows: 0,
-      maxRows: 20,
-      // prettier-ignore
-      blocks: [
-        ProjectList
-      ],
+      blocks: layoutBlocks,
     },
   ],
 };

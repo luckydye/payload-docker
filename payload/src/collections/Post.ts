@@ -1,9 +1,16 @@
+import { RichText } from "./../blocks/RichText";
+import { MediaList } from "../blocks/MediaList";
 import { CollectionConfig } from "payload/types";
 
-const Articles: CollectionConfig = {
-  slug: "articles",
+const layoutBlocks = [RichText, MediaList];
+
+const Posts: CollectionConfig = {
+  slug: "posts",
   admin: {
     useAsTitle: "title",
+  },
+  access: {
+    read: () => true,
   },
   versions: {
     drafts: true,
@@ -25,8 +32,10 @@ const Articles: CollectionConfig = {
       type: "date",
     },
     {
-      name: "copy",
-      type: "richText",
+      name: "layout",
+      type: "blocks",
+      minRows: 0,
+      blocks: layoutBlocks,
     },
     {
       name: "tags",
@@ -37,4 +46,4 @@ const Articles: CollectionConfig = {
   ],
 };
 
-export default Articles;
+export default Posts;

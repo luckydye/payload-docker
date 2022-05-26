@@ -1,13 +1,13 @@
 import { buildConfig } from "payload/config";
 import path from "path";
 import Users from "./collections/Users";
-import Projects from "./collections/Projects";
+import Teasers from "./collections/Teasers";
 import Media from "./collections/Media";
 import Compositions from "./collections/Composition";
 import Links from "./collections/Links";
 import Websites from "./collections/Websites";
 import Graphics from "./collections/Graphics";
-import Articles from "./collections/Articles";
+import Posts from "./collections/Post";
 import Tags from "./collections/Tags";
 import Roles from "./collections/Roles";
 
@@ -16,12 +16,13 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
+  cors: ["http://localhost:8000/"],
   // prettier-ignore
   collections: [
     Websites,
-    Articles,
+    Posts,
     Compositions,
-    Projects,
+    Teasers,
     Media, 
     Graphics,
     Links, 

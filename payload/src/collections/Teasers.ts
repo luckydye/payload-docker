@@ -1,7 +1,7 @@
 import { CollectionConfig } from "payload/types";
 
-const Projects: CollectionConfig = {
-  slug: "projects",
+const Teasers: CollectionConfig = {
+  slug: "teasers",
   admin: {
     useAsTitle: "title",
   },
@@ -32,8 +32,8 @@ const Projects: CollectionConfig = {
       type: "text",
     },
     {
-      name: "copy",
-      type: "richText",
+      name: "description",
+      type: "text",
     },
     {
       name: "date",
@@ -42,4 +42,4 @@ const Projects: CollectionConfig = {
   ],
 };
 
-export default Projects;
+export default Teasers;

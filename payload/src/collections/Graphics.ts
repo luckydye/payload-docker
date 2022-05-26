@@ -2,6 +2,9 @@ import { CollectionConfig } from "payload/types";
 
 const Graphics: CollectionConfig = {
   slug: "graphics",
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: "alt",

@@ -2,7 +2,18 @@ import { CollectionConfig } from "payload/types";
 
 const Media: CollectionConfig = {
   slug: "media",
+  access: {
+    read: () => true,
+  },
   fields: [
+    {
+      name: "title",
+      type: "text",
+    },
+    {
+      name: "description",
+      type: "text",
+    },
     {
       name: "alt",
       type: "text",
