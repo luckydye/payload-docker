@@ -10,7 +10,10 @@ const dist = path.resolve("./dist");
 module.exports = {
   target: "web",
   mode: process.env.NODE_ENV || "development",
-  entry: "./src/main.ts",
+  entry: {
+    main: "./src/main.ts",
+    index: "./src/index.ts",
+  },
   module: {
     rules: [
       {

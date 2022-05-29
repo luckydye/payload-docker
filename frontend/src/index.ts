@@ -7,6 +7,7 @@ import "./components/LoadingPlaceholder.js";
 import "./components/VideoPlayer.js";
 import "./components/PostList.js";
 import "./components/TwitchNotification.js";
+
 import Win from "./components/Window.js";
 
 window.openUncut = () => {

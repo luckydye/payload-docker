@@ -247,7 +247,7 @@ main[loading] {
 }
 
 footer {
-  --content-width: 1350px;
+  --content-width: 1160px;
   padding: 0px 20px;
   border-top: 1px solid var(--bg-border-color);
   height: 200px;
