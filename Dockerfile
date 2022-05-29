@@ -11,13 +11,13 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY package.json  .
-COPY yarn.lock  .
-
-RUN yarn install
-
 COPY . .
-RUN yarn build
+
+WORKDIR /app/payload
+RUN npm install
+RUN npm run build
 
 EXPOSE 3000
-CMD [ "yarn", "serve" ]
+EXPOSE 8000
+
+CMD [ "npm", "run", "start" ]
