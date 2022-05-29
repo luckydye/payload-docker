@@ -2,7 +2,7 @@ import * as Eta from "https://deno.land/x/eta/mod.ts";
 import { serve } from "https://deno.land/std/http/mod.ts";
 import ContentTypes from "./ContentTypes.ts";
 
-Eta.configure({ views: "./templates" });
+Eta.configure({ views: "./dist" });
 
 const reqHandler = async (req: Request) => {
   try {
@@ -40,7 +40,7 @@ const reqHandler = async (req: Request) => {
     }
 
     try {
-      const file = await Deno.readFile(`static/${u.pathname}`);
+      const file = await Deno.readFile(`dist/${u.pathname}`);
       const parts = u.pathname.split(".");
       const extension = parts[parts.length - 1];
 

@@ -3,12 +3,26 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "generate": "echo Generate static site",
-    "dev": "echo Dev watch/build/serve",
-    "start": "deno run --allow-read --allow-net server/server.ts",
-    "build": "echo Build frontend"
+    "dev": "webpack -w",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "lit": "latest",
+    "markdown-it": "^12.3.2"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.6.0",
+    "extract-loader": "^5.1.0",
+    "lit-scss-loader": "^1.1.0",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.3.5",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
 }
