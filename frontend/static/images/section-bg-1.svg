@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2329" height="735.5"
+    viewBox="0 0 2329 735.5">
+    <defs>
+        <clipPath id="a">
+            <rect width="1920" height="735" transform="translate(2361 1064)" fill="#bcbcbc" />
+        </clipPath>
+    </defs>
+    <g transform="translate(197 -1206)">
+        <rect width="300" height="30" transform="translate(1769 1380)" fill="#272727" />
+        <rect width="30" height="30" transform="translate(1827 1717)" fill="#272727" />
+        <g transform="translate(-2361 142)" clip-path="url(#a)">
+            <path
+                d="M438.965,0H361.084V-209.473q0-33.936,2.93-74.951h-1.953q-6.1,32.227-10.986,46.387L269.043,0H204.59l-83.5-235.6q-3.418-9.521-10.986-48.828h-2.2q3.174,51.758,3.174,90.82V0H40.039V-350.1H155.518l71.533,207.52A292.181,292.181,0,0,1,239.5-92.529h1.465a503.953,503.953,0,0,1,13.916-50.537L326.416-350.1H438.965ZM764.4-285.889H664.551V0h-79.1V-285.889H486.084V-350.1H764.4ZM1021.484,0H811.523V-350.1h201.9v64.209H890.381v77.881h114.5v63.965h-114.5v80.078h131.1Zm307.129-12.451Q1290.283,6.1,1228.516,6.1q-80.566,0-126.709-47.363T1055.664-167.48q0-83.984,51.88-136.23t134.644-52.246q51.27,0,86.426,12.939v75.928q-35.156-21-80.078-21-49.316,0-79.59,31.006T1138.672-173.1q0,50.781,28.564,80.933t76.9,30.151q46.143,0,84.473-22.461Z"
+                transform="translate(2835.5 1630.5) rotate(-90)" fill="#272727" />
+        </g>
+        <rect width="14" height="14" transform="translate(1714 1574)" fill="#272727" />
+        <rect width="2329" height="735" transform="translate(-197 1206)" fill="none" />
+        <line y2="735" transform="translate(639.5 1206.5)" fill="none" stroke="#1A1A1A" stroke-width="1" />
+    </g>
+</svg>

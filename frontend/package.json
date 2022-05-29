@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w",
-    "build": "webpack"
+    "build:w": "webpack -w",
+    "build": "webpack",
+    "dev": "deno run --allow-read --allow-net server/server.ts",
+    "start": "deno run --allow-read --allow-net server/server.ts"
   },
   "author": "",
   "license": "ISC",
